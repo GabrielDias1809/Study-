@@ -1,0 +1,33 @@
+
+{% extends 'base.html' %}
+{% load render_table from django_tables2 %}
+{% block content %} 
+<!doctype html>
+<html>
+    <head>
+        <title>List of persons</title>
+    </head>
+    <body>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                </tr>
+                </thead>
+                {% for Subjects in object_list%}
+                    <tbody>
+                    <tr>
+                        <th scope="row"><!--aqui entra outra coluna--></th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><!--aqui entra outra coluna--></th>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                {% endfor %}
+            </table>
+    </body>
+</html>
+
+{% endblock %}
