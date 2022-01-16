@@ -11,18 +11,15 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    {% for Days in object_list %}
+                        <td>{{Days.choose_days}}</td>
+                    {% endfor %}
                 </tr>
                 </thead>
-                {% for Subjects in object_list%}
                     <tbody>
+                {% for Subjects in object_list%}
                     <tr>
-                        <th scope="row"><!--aqui entra outra coluna--></th>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><!--aqui entra outra coluna--></th>
-                        <td></td>
+                        <td>{{Subjects.subjects_in_course}}</td>
                     </tr>
                     </tbody>
                 {% endfor %}

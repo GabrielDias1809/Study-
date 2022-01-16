@@ -1,3 +1,6 @@
+from email.policy import default
+from random import choice, choices
+from socket import SocketIO
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 # Create your models here.
@@ -5,6 +8,7 @@ from django.utils.translation import gettext_lazy as _
 class Subjects(models.Model):
 
     class type_subjects(models.TextChoices):
+
         Mat1     = 'Arit', _('Aritmética')
         Mat2     = 'Alg', _('Álgebra')
         Mat3     = 'Geom', _('Geometria')
@@ -15,9 +19,10 @@ class Subjects(models.Model):
         Qui      = 'Qui', _('Química')
         Red      = 'Red', _('Redação')
         Lit      = 'Lit', _('Literatura')
+        Socio    = 'Socio',_('Sociologia')
+        Filo    = 'Filo',_('Filosofia')
 
-
-    subjects_in_course      = models.CharField(max_length=4,choices=type_subjects.choices,default=type_subjects.Mat1)
+    subjects_in_course      = models.CharField(max_length=7,choices=type_subjects.choices,default=type_subjects.choices)
     verbose_name            = 'Subject'
 
     def __str__(self):
